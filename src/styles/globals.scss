@@ -1,12 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+.fakebody::after,
+.fakebody::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background: rgb(50, 50, 50);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(70px);
+  mix-blend-mode: lighten;
+}
+
+.fakebody::before {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+.fakebody::after {
+  top: 50%;
+  left: 0px;
+  transform: translateX(-50%);
+}
+/*With gradient background*/
+.fakebody {
+  background: radial-gradient(
+      circle closest-corner at center 125px,
+      rgb(50, 50, 50),
+      #191b1f 70%
+    )
+    no-repeat;
+  max-height: 100vw;
 }

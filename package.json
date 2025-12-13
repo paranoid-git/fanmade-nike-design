@@ -10,7 +10,6 @@
     "preview": "vite preview",
     "scss:watch": "sass --watch src/styles:dist/styles",
     "assets:watch": "chokidar 'public/models/**/*' -c 'echo Model changed'"
-
   },
   "dependencies": {
     "@paper-design/shaders-react": "^0.0.68",
@@ -35,6 +34,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "prettier": "3.7.4",
     "sass": "^1.96.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
