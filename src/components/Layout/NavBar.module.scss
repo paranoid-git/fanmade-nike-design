@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: transparent;
+
+
+  .navlinks {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .navlink_liquid_glass {
+    font-family: Montserrat, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-weight: normal;
+    padding: 0.5rem 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: scale 0.3s ease;
+  }
+
+  .navlink_liquid_glass:hover {
+    scale: 1.1;
+  }
+}

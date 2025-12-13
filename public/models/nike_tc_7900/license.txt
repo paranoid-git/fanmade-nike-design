@@ -1,0 +1,11 @@
+Model Information:
+* title:	Nike TC 7900
+* source:	https://sketchfab.com/3d-models/nike-tc-7900-ce036b3d7f89439ab784194ca2a1f265
+* author:	Taturay (https://sketchfab.com/Taturay)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Nike TC 7900" (https://sketchfab.com/3d-models/nike-tc-7900-ce036b3d7f89439ab784194ca2a1f265) by Taturay (https://sketchfab.com/Taturay) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
