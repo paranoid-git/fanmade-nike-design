@@ -1,0 +1,21 @@
+@use "./breakpoints.scss" as *;
+
+@mixin mq($size) {
+  @if $size ==tablet {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  }
+
+  @else if $size ==desktop {
+    @media (max-width: $desktop) {
+      @content;
+    }
+  }
+
+  @else if $size ==phone {
+    @media (max-width: $phone) {
+      @content;
+    }
+  }
+}

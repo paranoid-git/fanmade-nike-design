@@ -1,7 +1,31 @@
+@use "../../styles/mixins" as *;
+
 .shoe_container {
-  z-index: 2;
-  min-height: 100vh;
   height: 100vh;
+  pointer-events: none;
+
+  @include mq(desktop) {
+    min-height: 100vh;
+    height: 100vh;
+  }
+
+  @include mq(tablet) {
+    min-height: 50vh;
+    height: 50vh;
+  }
+
+  @include mq(phone) {
+    min-height: 40vh;
+    height: 40vh;
+  }
+
+  pointer-events: none;
+}
+
+.shoe_wrapper {
+  pointer-events: none;
+  width: 50%;
+  left: 50vw;
 }
 
 .hero {
@@ -16,6 +40,11 @@
 .hero_left {
   grid-column: 1;
   grid-row: 1;
+
+  @include mq(desktop) {
+    min-height: 100vh;
+    height: 100vh;
+  }
 }
 
 .text_2 {
@@ -27,6 +56,68 @@
   position: relative;
   min-height: 100vh;
   float: left;
+
+  @include mq(desktop) {
+    min-height: 100vh;
+    max-height: 100vh;
+    height: 100vh;
+  }
+
+  @include mq(tablet) {
+    min-width: 50vw;
+  }
+
+  @include mq(phone) {
+    min-width: 30vw;
+    min-height: 30vh;
+    max-height: 30vh;
+    height: 30vh;
+  }
+}
+
+.textparagraph2 {
+  padding-left: 8rem;
+  left: 50%;
+
+  @include mq(tablet) {
+    padding-left: 0;
+    left: 0;
+  }
+
+  @include mq(phone) {
+    padding-left: 0;
+    left: 0;
+  }
+}
+
+.textheader1 {
+  font-size: 8rem;
+  margin: 0 0;
+
+  @include mq(desktop) {
+    font-size: 100rem;
+  }
+
+  @include mq(tablet) {
+    font-size: 3rem;
+  }
+
+  @include mq(phone) {
+    font-size: 1.5rem;
+  }
+}
+
+.textparagraph1 {
+  font-size: 2.5rem;
+  margin: 0 0;
+
+  @include mq(tablet) {
+    font-size: 1.5rem;
+  }
+
+  @include mq(phone) {
+    font-size: 1rem;
+  }
 }
 
 .text_container {
@@ -39,6 +130,25 @@
   min-height: 100vh;
   min-width: 50vw;
   margin: 0 0;
+  padding-bottom: 0;
+  padding-top: 0;
+
+  @include mq(tablet) {
+    margin: 10rem 0;
+  }
+
+  @include mq(desktop) {
+    margin: 0 0;
+    min-width: 50vw;
+    padding-bottom: 0;
+    padding-top: 0;
+    justify-content: center;
+  }
+
+  @include mq(phone) {
+    margin: 10rem 0;
+    justify-content: flex-start;
+  }
 }
 
 .hero_right {

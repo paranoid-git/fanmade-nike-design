@@ -7,8 +7,7 @@ export default function App() {
   const location = useLocation();
 
   // Initialize smooth scroll
-  useLenisScroll();
-
+   
   // Reset scroll on route change
   useEffect(() => {
     window.scrollTo(0, 0);

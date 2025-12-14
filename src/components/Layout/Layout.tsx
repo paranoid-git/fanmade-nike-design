@@ -11,11 +11,9 @@ export default function Layout({ children }: Props) {
   //usePageTransition(containerRef);
 
   return (
-    <div className="fakebody">
-      <div ref={containerRef} data-page-container>
-        <NavBar />
-        {children}
-      </div>
+    <div ref={containerRef} data-page-container>
+      <NavBar />
+      {children}
     </div>
   );
 }

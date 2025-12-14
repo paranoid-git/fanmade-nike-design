@@ -1,40 +1,77 @@
 import { useEffect } from "react";
 import styles from "./Home.module.scss";
 import Scene from "../../canvas/Scene";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import React, { useRef } from "react";
+import { useDevice } from "../../hooks/useDevice";
 export default function Home() {
   const shoeref = useRef(null);
   const rightref = useRef(null);
+  const leftref = useRef(null);
+  const isMobile = useDevice();
+  
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     // Your GSAP animations here
-
-    const shoeContainer = shoeref.current;
-
-    gsap.to(shoeContainer, {
-      xPercent: -100,
-      y: 0,
-      //duration: 1,
-      scrollTrigger: {
-        trigger: "#container",
-        pin: true,
-        scrub: 1,
-        end: "+=1000",
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      leftref.current,
+      {
+        xPercent: -100,
+        autoAlpha: 0,
       },
+      {
+        xPercent: 0,
+        autoAlpha: 1,
+        duration: 1,
+      },
+    );
+
+    gsap.fromTo(
+      shoeref.current,
+      {
+        autoAlpha: 0,
+        xPercent: 100,
+      },
+      {
+        delay: 1.5,
+        xPercent: 0,
+        autoAlpha: 1,
+        duration: 1,
+      },
+    );
+    gsap.set(shoeref.current, {
+      xPercent: 0,
+      y: 0,
     });
-  }, []);
+    gsap.to(
+      shoeref.current,
+
+      {
+        xPercent: -100,
+        y: 0,
+
+        scrollTrigger: {
+          scrub: 1,
+          pin: true,
+          start: "top top",
+          trigger: "#container",
+          end: isMobile ? "+=250" : "+=500",
+        },
+      },
+    );
+  }, [isMobile]);
   return (
     <section data-page>
       <div className={styles.hero}>
-        <div className={styles.hero_left}>
+        <div ref={leftref} className={styles.hero_left}>
           <div className={styles.text_2}>
             <div className={styles.text_container}>
               <h1
+                className={styles.textheader1}
                 style={{
                   fontFamily: "Montserrat",
-                  fontSize: "5rem",
+                  //fontSize: "5rem",
 
                   textAlign: "center",
                   color: "white",
@@ -43,9 +80,10 @@ export default function Home() {
                 Nike
               </h1>
               <p
+                className={styles.textparagraph1}
                 style={{
                   fontFamily: "Montserrat",
-                  fontSize: "2.5rem",
+                  //fontSize: "2.5rem",
                   textAlign: "center",
                   color: "white",
                 }}
@@ -60,23 +98,23 @@ export default function Home() {
           style={{
             minHeight: "100vh",
             height: "100vh",
-            overflow: "hidden",
-            left: "50vw",
+            overflow: "visible",
+
             position: "fixed",
             float: "right",
-
-            width: "50%",
           }}
+          className={styles.shoe_wrapper}
         >
           <div className={styles.shoe_container}>
-            <Scene />
+            <Scene style={{ width: "100%", height: "100%" }} />
           </div>
         </div>
-        <div ref={rightref} className={styles.hero_right}>
+        <div ref={rightref} id="right" className={styles.hero_right}>
           <h1
+            className={styles.textheader1}
             style={{
               fontFamily: "Montserrat",
-              fontSize: "2.5rem",
+              //fontSize: "2.5rem",
               textAlign: "center",
               color: "white",
             }}
@@ -85,20 +123,17 @@ export default function Home() {
           </h1>
           <h1
             style={{
-              paddingLeft: "8rem",
-              left: "50%",
               fontFamily: "Montserrat",
               fontSize: "1rem",
-
+              marginTop: "1rem",
               color: "white",
             }}
           >
             Over 500 Million+ Pairs Sold:
           </h1>
           <p
+            className={styles.textparagraph2}
             style={{
-              paddingLeft: "8rem",
-              left: "50%",
               fontFamily: "Montserrat",
               fontSize: "1rem",
 
