@@ -1,12 +1,12 @@
-import { ReactNode, useRef } from "react";
+import { ReactNode, useRef } from 'react'
 
-import NavBar from "./NavBar";
+import NavBar from './NavBar'
 type Props = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 export default function Layout({ children }: Props) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null)
 
   //usePageTransition(containerRef);
 
@@ -15,5 +15,5 @@ export default function Layout({ children }: Props) {
       <NavBar />
       {children}
     </div>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home/Home";
-import About from "../pages/About/About";
-import Work from "../pages/Work/Work";
-import Layout from "../components/Layout/Layout";
+import { Routes, Route } from 'react-router-dom'
+import Home from '../pages/Home/Home'
+import About from '../pages/About/About'
+import Work from '../pages/Work/Work'
+import Layout from '../components/Layout/Layout'
 
 export function Router() {
   return (
@@ -13,5 +13,5 @@ export function Router() {
         <Route path="/work" element={<Work />} />
       </Routes>
     </Layout>
-  );
+  )
 }

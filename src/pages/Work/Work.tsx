@@ -1,3 +1,3 @@
 export default function Work() {
-  return <section data-page>Work</section>;
+  return <section data-page>Work</section>
 }
